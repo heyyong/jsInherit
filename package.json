@@ -5,14 +5,20 @@
   "author": "EdenCao <edencaox@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "chai": "^4.2.0"
+    "@babel/generator": "^7.4.0",
+    "@babel/parser": "^7.4.3",
+    "@babel/traverse": "^7.4.3",
+    "@types/babel__generator": "^7.0.2"
   },
   "scripts": {
     "test": "ts-node ./src/inherit.spec.ts"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/node": "^11.9.5",
-    "ts-node": "^8.0.2"
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.4",
+    "jest": "^24.7.1",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.3"
   }
 }
