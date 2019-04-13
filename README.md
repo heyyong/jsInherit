@@ -36,3 +36,10 @@ function B() {
   this.b = 12;
 }
 ```
+
+##
+使用
+```sh
+yarn build
+```
+来进行编译
