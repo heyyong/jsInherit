@@ -1,9 +1,38 @@
 # jsInherit
-用 es5 实现的继承示例
+一个简单的继承实例
 
-需要注意的是 inherit 方法返回的是新的构造函数（因为是运行时，无法把 Super 编译到 Sub 当中），name 的值是不等于 Sub 的（因为 name 属性只读）
+会将
+```js
+function A() {
+    this.a = 12;
+}
 
-## 调试
-```sh
-yarn test
+function B__extends__A() {
+    this.b = 12;
+}
+```
+当作继承来看待，编译结果为：
+```js
+function A() {
+  this.a = 12;
+}
+
+function B() {
+  function __inheritProrotype(subType, superType) {
+    var prototype = Object.create(superType.prototype);
+    prototype.constructor = subType;
+    subType.prototype = prototype;
+  }
+
+  var __args;
+
+  for (var __i in arguments) {
+    __args[i] = arguments[i];
+  }
+
+  __inheritProrotype(B, A);
+
+  A.call(this, __args);
+  this.b = 12;
+}
 ```
